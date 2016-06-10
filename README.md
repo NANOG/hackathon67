@@ -23,3 +23,7 @@ On the VPS, we have built a mini clone to a system known as "FBNet", a network t
 The example provided uses a traditional MySQL database (named "hackathon").  We have a simple table structure of "devices", "locations", "interfaces", and "circuits".  While the first few sound obvious, the secret sauce to FB's automation abilities lie in the level of detail modeled on the "circuit" level.  When you are able to model fully L2 and L3, many more doors of possibility open!  Back to this though, the "circuits" table represents only physical L2 connections.  We will describe L3 separately.
 
 You will find the example in ~/hackathon/, along with data pre-loaded to the current instance of MySQL server.  To see the pre-loaded data, type "mysql" on your shell.  This is an alias to "mysql -u<username> -p<password>", dropping you into a MySQL shell.  Once in that, type "use hackathon;" use standard SQL commands such as "select * from devices" to see the pre-loaded data.  Should you need to reset the database and pre-loaded data, simply run "dbsetup.sh" from the "hackathon" directory.  The full SQL schema can be found in that shell script too!
+
+## The Pre-staged Network Topology
+The database has been pre-staged using the script "dbsetup.sh", which builds a network topology of two datacenters with one cluster each.  Each "cluster" contains 128 rack switches and 4 cluster switches.  Drawling below illustrates one cluster --
+[[https://raw.githubusercontent.com/NANOG/hackathon67/master/_wiki_assets/FBNetLab_Overview.001.jpeg]]
